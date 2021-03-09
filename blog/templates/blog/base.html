@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 
 <html>
   <head>
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% {% static 'css/blog.css' %}%}" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css" media="screen" charset="utf-8">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -51,7 +51,7 @@
                 <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'post_draf_list' %}">Drafts</a>
+                <a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
@@ -61,7 +61,7 @@
               </li>
             {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}"><span class='glyphicon glyphicon-user'></span></a>
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
               </li>
             {% endif %}
           </ul>
